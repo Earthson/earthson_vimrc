@@ -48,3 +48,6 @@ func CompileAndRun()
         exec "silent !rm %:r.native && rm -r _build"
     endif
 endfunc
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
