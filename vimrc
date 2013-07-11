@@ -42,9 +42,9 @@ func CompileAndRun()
         exec "silent !rm auto_run.out"
     elseif b:ext == "ml"
         call ShowCompile()
-        exec "silent !ocamlbuild %:r.byte"
+        exec "silent !ocamlbuild %:r.native"
         call ShowRun()
-        exec "!./%:r.byte"
-        exec "silent !rm %:r.byte && rm -r _build"
+        exec "!./%:r.native"
+        exec "silent !rm %:r.native && rm -r _build"
     endif
 endfunc
