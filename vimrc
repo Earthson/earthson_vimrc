@@ -25,7 +25,8 @@ func CompileAndRun()
     if b:ext == "go"
         exec "!go run %"
     elseif b:ext == "py"
-        exec "!python %"
+        exec "!chmod +x %"
+        exec "!./%"
     elseif b:ext == "sh"
         exec "!sh %"
     elseif b:ext == "c"
@@ -42,7 +43,7 @@ func CompileAndRun()
         exec "silent !rm auto_run.out"
     elseif b:ext == "ml"
         call ShowCompile()
-        exec "silent !ocamlbuild %:r.native"
+        exec "silent !ocamlbuild -I +camlp4 %:r.native"
         call ShowRun()
         exec "!./%:r.native"
         exec "silent !rm %:r.native && rm -r _build"
