@@ -37,7 +37,7 @@ func CompileAndRun()
         exec "silent !rm auto_run.out"
     elseif b:ext == "cpp"
         call ShowCompile()
-        exec "silent !g++ -o auto_run.out %"
+        exec "silent !g++ -std=c++11 -o auto_run.out %"
         call ShowRun()
         exec "!./auto_run.out"
         exec "silent !rm auto_run.out"
