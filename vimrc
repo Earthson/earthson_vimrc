@@ -25,7 +25,7 @@ func CompileAndRun()
     if b:ext == "go"
         exec "!go run %"
     elseif b:ext == "py"
-        exec "!chmod +x %"
+        exec "silent!chmod +x %"
         exec "!./%"
     elseif b:ext == "sh"
         exec "!sh %"
